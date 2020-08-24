@@ -6,10 +6,10 @@ int initialize_deck(deck_t deck)
     int deck_i = 0;
     for (int j = 0; j < SUIT_QUANTITY; j++){
         for (int i = 0; i < VALUES_QUANTITY; i++){
-            card_t card;
-            card.value = POSSIBLE_VALUES[i];
-            card.suit = POSSIBLE_SUITS[j];
-            deck[deck_i] = card;
+            deck[deck_i] = {
+                .suit = POSSIBLE_SUITS[j],
+                .value=POSSIBLE_VALUES[i]
+            };
             deck_i++;
         }
     }
