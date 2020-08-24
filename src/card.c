@@ -47,8 +47,8 @@ int card_rank(card_t card)
 int cardcmp(card_t a, card_t b)
 {
     // Returns:
-    // - < 0 if a wins against b
+    // - > 0 if a wins against b
     // - = 0 if it's a draw
-    // - > 0 if a loses against b
-    return card_rank(a) - card_rank(b);
+    // - < 0 if a loses against b
+    return -(card_rank(a) - card_rank(b));
 }
