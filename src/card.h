@@ -24,7 +24,7 @@ typedef struct {
 
 typedef card_t deck_t[CARD_QUANTITY];
 
-static const card_t card_scale[SCALE_LENGTH] = {
+static const card_t CARD_SCALE[SCALE_LENGTH] = {
     {.suit=Espada, .value=1},
     {.suit=Basto, .value=1},
     {.suit=Espada, .value=7},
@@ -41,8 +41,8 @@ static const card_t card_scale[SCALE_LENGTH] = {
     {.suit=Any, .value=4},
 };
 
-static const card_value_t possible_values[VALUES_QUANTITY] = {1,2,3,4,5,6,7,10,11,12};
-static const card_suit_t possible_suits[SUIT_QUANTITY] = {Basto, Copa, Espada, Oro};
+static const card_value_t POSSIBLE_VALUES[VALUES_QUANTITY] = {1,2,3,4,5,6,7,10,11,12};
+static const card_suit_t POSSIBLE_SUITS[SUIT_QUANTITY] = {Basto, Copa, Espada, Oro};
 
 int initialize_deck(deck_t deck);
 char *suit_to_string(card_suit_t suit);

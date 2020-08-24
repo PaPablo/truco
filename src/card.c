@@ -7,8 +7,8 @@ int initialize_deck(deck_t deck)
     for (int j = 0; j < SUIT_QUANTITY; j++){
         for (int i = 0; i < VALUES_QUANTITY; i++){
             card_t card;
-            card.value = possible_values[i];
-            card.suit = possible_suits[j];
+            card.value = POSSIBLE_VALUES[i];
+            card.suit = POSSIBLE_SUITS[j];
             deck[deck_i] = card;
             deck_i++;
         }
@@ -35,7 +35,7 @@ char *suit_to_string(card_suit_t suit)
 int card_rank(card_t card)
 {
     for (int i = 0; i < SCALE_LENGTH; ++i) {
-        card_t target = card_scale[i];
+        card_t target = CARD_SCALE[i];
         if (card.suit & target.suit && card.value == target.value) {
             return i;
         }
