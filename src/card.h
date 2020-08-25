@@ -5,6 +5,7 @@
 #define SUIT_QUANTITY 4
 #define VALUES_QUANTITY 10
 #define SCALE_LENGTH 14
+#define HAND_SIZE 3
 
 typedef enum
 {
@@ -23,6 +24,8 @@ typedef struct {
 } card_t;
 
 typedef card_t deck_t[CARD_QUANTITY];
+
+typedef card_t hand_t[HAND_SIZE];
 
 static const card_t CARD_SCALE[SCALE_LENGTH] = {
     {.suit=Espada, .value=1},
@@ -48,6 +51,9 @@ int initialize_deck(deck_t deck);
 char *suit_to_string(card_suit_t suit);
 int card_rank(card_t card);
 int cardcmp(card_t a, card_t b);
+void display_hand(hand_t hand);
 
+void shuffle_deck(deck_t deck);
+hand_t *deal_hands(deck_t deck, int qty);
 
 #endif // CARD_H_
